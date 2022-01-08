@@ -1,0 +1,51 @@
+:root {
+    --white: #ffffff;
+    --primary: #0062B8;
+    --secondary: #002E5D;
+    --gray: #808080;
+    --dark: #212121;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Oswald', sans-serif;
+}
+
+header, nav, main, footer {
+    margin: 1.25rem auto;
+    max-width: 800px;
+}
+
+header, footer {
+    position: relative;
+    background-color: var(--primary);
+    padding: .5rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+  
+header img {
+    width: 200px;
+    border: 2px solid; 
+    border-radius: 5px;
+}
+
+
+
+nav {
+    color: rgb(85, 117, 113);
+}
+
+a {
+    color: inherit;
+}
+
+
+
+@media only screen and (min-width: 32.5em) {
+    header img {
+        float: right;
+    }
+}
