@@ -32,7 +32,10 @@ header img {
     border-radius: 5px;
 }
 
-
+h1, h2, h3 {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 nav {
     color: rgb(85, 117, 113);
@@ -49,3 +52,4 @@ a {
         float: right;
     }
 }
+

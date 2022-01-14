@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week02 Notes</title>
+    <meta name="description" content="Week02 Reading notes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Week02 notes:</h1>
+
+<h2>Novice to Ninja:</h2>
+
+<h3>Chapter 2 Notes-</h3>
+
+"//" is for short comments where "/**/" are for multi-line comments.<br>
+ At work we have certain rules for the devs where there is a<br>
+multi-line header for author, version control, purpose of script etc.<br>
+and then short one line comments throughout the code for explaining certain things.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Javascript is a C-Style syntax and though it is not necessary to end statements with semicolons as it uses Automatic Semicolon Insertion(ASI).<br>
+it is consdered best practice to end each statement on a new line and terminate is with a semi-colon.<br>
+See below example:<br><br>
+
+const message = 'Hello World!';<br>
+alert(message);<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+A block is a series of statements that are collected together inside curly braces. good for combining statements. also called compound statements in other langues<br>
+See below example:<br><br>
+var x = 1;<br>
+let y = 1;<br>
+<br>
+if (true) {<br>
+  var x = 2;<br>
+  let y = 2;<br>
+}<br>
+<br>
+console.log(x);<br>
+// expected output: 2<br>
+<br>
+console.log(y);<br>
+// expected output: 1<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Reserved words for use by the JavaScript language and cannot be used to name variables:<br><br>
+abstract, await, boolean, break, byte, case, catch, char, class, const, continue<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+JavaScript has a special operator called typeof for finding out the type of a
+value.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+JavaScript uses the keywords const and let to declare variables. The keyword<br>
+const is used when the variable will not be reassigned to another value*, whereas<br>
+let is used if the variable might be reassigned later in the program.<br><br>
+*note const variable references non-primitive data types like arrays,<br>
+functions or objects means the data inside the object can change which<br>
+is known as mutating the object.<br><br>
+**note var is used pre ES6 and worked much the same way as let. older code use it and need to be aware<br><br>
+
+You can declare assign mutiple variables at same time. Must separet with commas:<br><br>
+
+let x = 3, y = 4, z = 5;<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Global vs local scope<br><br>
+
+Global scope means a variable declared outside of a block is accesible everywhere in the program. should keep<br>
+global variables to a minimum to avoid issues of common variable names overwriting eachother.<br><br>
+
+Local Scope means the variable is only accesible inside the block using it. *unless let or const were not used.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+be consistent with naming conventions for variables. common convention is camelCase.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+using blackslashes to "escape" special characters in strings. you can even blackslash a blackslash<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+symbols are new primitve values in ES6 and are used to create unique values. avoids naming collisions<br>
+variables can share same symbol<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+template literals behave in the same way as normal string literals but allow for string interpolation<br>
+which basically is subing in a value not otherwise in allowed in string literals. Common practice is to make<br>
+all strings template literals<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+careful using dot method with number literals that are integers because JS will confuse the dot with a decimal<br>
+use two dots or space before dot or always write integer as decimal or place integer in parentheses or assign number to constant<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Converting is when Javascript attempts to coerce operands of an operator that are different types together<br>
+Basically Javascrip will attempt to do what you are telling it to do. for example: '2' * 8; Javascript will attempt<br>
+to convert the string (2) to a number. But it is not always logical or consistent.<br><br>
+
+Parsingint converts string representation of a numerical value back into a number.<br>
+If a string starts with a number, the parseInt function will use this number and ignore any letters that come afterwards<br>
+And if you use parseInt with a decimal, it will remove anything after the decimal point. for this use parsefloat()<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Boolean values are true and false. There are 9 falsy values<br>
+* "" // double quoted empty string literal<br>
+* '' // single quoted empty string literal<br>
+* `` // empty template literal<br>
+* 0<br>
+* -0 // considered different to 0 by JavaScript!<br>
+* NaN<br>
+* false<br>
+* null<br>
+* undefined<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+soft equality == doesnt take into account data type. Hard equality === does. Apparently his works in python as well!<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<h3>Chapter 3 Notes-</h3>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Array is an ordered list with square brackets  -  const myArray = [];<br>
+push(value) → Add an element to the end of the array. unshift(value) → Add an element to the beginning of an array.<br>
+array.pop() removes last item. array.shift()removes first item<br>
+concat() method can be used to merge an array with one or more arrays:<br><br>
+
+avengers.concat(['Hulk','Hawkeye', 'Black Widow']);<br>
+&lt;&lt; ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black</p><br><br>
+
+splice() method removes items from an array then inserts new items in their place. For example, the following code<br>
+removes the string 'Hulk' and replaces it with 'Scarlett Witch':<br><br>
+
+avengers.splice(3, 1, 'Scarlet Witch');<br>
+&lt;&lt; ['Hulk']<br><br>
+
+This is a destructive operation as it changes the value of the array, as we can see below:<br><br>
+avengers<br>
+&lt;&lt; ['Captain America', 'Iron Man', 'Thor', 'Scarlet Witch', 'Hawkeye', 'Black widow']<br><br>
+
+note that you can still use the splice method to insert without removing... avengers.splice(3, 0, 'Dan Allred')<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Destructuring arrays allows assigning multiple values at same time - const [x,y] = [1,2];<br>
+allows for swapping values of variables<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+To access the values in a multidimensional array, we use two indices: one to refer to the item's place in the outer array,<br>
+and one to refer to its place in the inner array:<br><br>
+
+coordinates[0][0]; // The first value of the first array<br>
+&lt;&lt; 1<br>
+coordinates[1][0]; // The first value of the second array<br>
+&lt;&lt; 4<br><br>
+
+The spread operator can be used to flatten multi-dimensional arrays. Flattening an array involves removing all nested arrays<br>
+so all the values are on the same level in the array. You can see an example of a flattened array below:<br><br>
+
+const summer = ['Jun', 'Jul', 'Aug'];<br>
+const winter = ['Dec', 'Jan', 'Feb'];<br>
+const nested = [ summer, winter ];<br>
+&lt;&lt; [ [ 'Jun', 'Jul', 'Aug' ], [ 'Dec', 'Jan', 'Feb' ] ]<br><br>
+
+const flat = [...summer, ...winter];<br>
+&lt;&lt; [ 'Jun', 'Jul', 'Aug', 'Dec', 'Jan', 'Feb' ]<br><br>
+
+https://www.sitepoint.com/quick-tip-create-manipulate-arrays-in-javascript/<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+set() are lists of unique values or no duplicate values. example would be work related where a customer wants to track vin numbers...<br>
+list.add(1).add(2).add(3) would allow for multiple items to be added at same time. duplicates will be ignored<br>
+use lits.clear(); to remove items from list<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+maps are similar to dictionaries. They store lists of key and value pairs. use set() method to add key and value pair to a map.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+The switch operator can be used to make your code easier to follow when there are lots of conditions to test. The example above<br>
+can be rewritten using a switch statement like so:<br><br>
+
+switch (number) {<br>
+case 4:<br>
+console.log('You rolled a four');<br>
+break;<br>
+case 5:<br>
+console.log('You rolled a five');<br>
+break;<br>
+case 6:<br>
+console.log('You rolled a six');<br>
+break;<br>
+default:<br>
+console.log('You rolled a number less than four');<br>
+break;<br>
+}<br><br>
+
+The value you are comparing goes in parentheses after the switch operator. A case keyword is then used for each possible value that<br> 
+can occur (4, 5, and 6 in the example above). After each case statement is the code that that needs to be run if that case occurs.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Loops are a review for me. nothing exactly new... Loops repeat code depending on conditions. types of loops:<br><br>
+While loop<br>
+do...while<br>
+for loop<br>
+nested for loop<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<h3>Chapter 4 Notes-</h3>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Functions are basically self-contained mini programs. They reduce repitition and make code easier to follow.<br><br>
+
+function literals start with: function functionName()<br><br>
+
+function hello(){<br>
+console.log('Hello World!');<br>
+}<br><br>
+
+OR<br><br>
+
+a anonymous function:<br><br>
+
+const goodbye = function(){<br>
+console.log('Goodbye World!');<br>
+};<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Parameters and arguments are terms that are often used interchangeably to represent values provided for the function<br> 
+as an input. There is a subtle difference though: any parameters a function needs are set when the function is defined.<br>
+When a function is invoked, it is provided with arguments.<br><br>
+
+function square(x){<br>
+return x*x;<br>
+}<br>
+
+When we invoke this function, we need to provide an argument, which is the number to be squared:<br><br>
+
+we can also give default parameters:<br><br>
+
+function hello(name='World') {<br>
+console.log(`Hello ${name}!);<br>
+}<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Arrow functions allow for the declaring of functions using less verbose syntax...<br><br>
+
+const add = (x,y) => x + y;<br><br>
+
+const tax = (salary) => {<br>
+const taxable = salary - 8000;<br>
+const lowerRate = 0.25 * taxable;<br>
+taxable = taxable - 20000;<br>
+const higherRate = 0.4 * taxable;<br>
+return lowerRate + higherRate;<br>
+}<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Function Hoisting seems super useful... moves all variable and function declarations to the top of the current scope(see notes on scope ch2)<br><br>
+
+// function is invoked at the start of the code<br>
+hoist();<br>
+// ...<br>
+// ... lots more code here<br>
+// ...<br>
+// function definition is at the end of the code<br>
+function hoist(){<br>
+console.log('Hoist Me!');<br>
+}<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Callbacks<br><br>
+
+A function that is passed as an argument to another is known as a callback, or better yet, a function which is to be executed after another function<br>
+has finished execution. https://www.simplilearn.com/tutorials/javascript-tutorial/callback-function-in-javascript<br><br>
+
+function sing(song,callback) {<br>
+console.log(`I'm singing along to ${song}.`);<br>
+callback();<br>
+}<br><br>
+
+Can also use functions as callbacks in sort() method for arrays.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+various iterator functions can be used in combination to create some powerful transformations of data stored in arrays. This is achieved by a process<br>
+called chaining methods together.<br><br>
+
+</body>
