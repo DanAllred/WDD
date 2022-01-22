@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week02 Notes</title>
+    <meta name="description" content="Week03 Reading notes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Week03 notes:</h1>
+
+<h2>Object Methods: this </h2>
+---------------------------------------------------------------------------------------------------<br><br>
+
+code using objects to represent entities, that's called object-oriented programming, in short: “OOP”<br>
+a method can use the "this" keyword. The value of this is the object “before dot”, the one used to call the method.<br><br>
+
+function sayHi() {<br>
+&emsp;alert( this.name );<br>
+}<br><br>
+
+Arrow functions are special: they don't have their “own” this. If we reference this from such a function, it's taken from the outer “normal” function.<br>
+For instance, here arrow() uses this from the outer user.sayHi() method:<br><br>
+
+let user = {<br>
+&emsp;firstName: "Ilya",<br>
+&emsp;sayHi() {<br>
+&emsp;&emsp;let arrow = () => alert(this.firstName);<br>
+&emsp;&emsp;arrow();<br>
+&emsp;}<br>
+};<br><br>
+
+user.sayHi(); // Ilya<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<h2>Novice to Ninja:</h2>
+
+<h3>Chapter 5 Notes-</h3>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+An object in JavaScript is a self-contained set of related values and functions.,They act as a collection of<br>
+named properties that map to any JavaScript value such as strings, numbers, booleans, arrays and functions.<br>
+If a property's value is a function, it is known as a method. One way to think about an object is that it's<br>
+like a dictionary where you look up a property name and see a value. It's like a database of values<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+object literal is an object that is created directly in the language by wrapping<br>
+all its properties and methods in curly braces {}. s they allow objects to be<br>
+created quickly without the need for defining a class<br><br>
+
+You can access the properties of an object using the dot notation... superman.name<br>
+You can also access an object's properties using bracket notation... superman['name']<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+objects with computed property keys means that JavaScript code can be placed inside square brackets and<br>
+the property key will be the return value of that code.<br><br>
+
+const hulk = { name: 'Hulk', ['catch' + 'Phrase']: 'Hulk Smash!' };<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+To call an object's method we can also use dot or bracket notation. Calling a<br>
+method is the same as invoking a function, so parentheses need to be placed after<br>
+the method name<br><br>
+
+The in operator can be used to check whether an object has a particular property<br>
+Alternatively, you could also check to see if the property or method doesn't<br>
+return undefined<br><br>
+
+loop through all of an object's properties and methods by using a for in<br>
+loop.<br><br>
+
+for(const key in superman) {<br>
+console.log(key + ": " + superman[key]);<br>
+} <br>
+&lt;&lt;"name: Superman"<br>
+&lt;&lt;"real name: Clark Kent"<br>
+&lt;&lt;"height: 75"<br>
+&lt;&lt;"weight: 235"<br>
+&lt;&lt;"hero: true"<br>
+&lt;&lt;"villain: false"<br>
+&lt;&lt;"allies: Batman,Supergirl,Superboy"<br>
+&lt;&lt;"fly: function (){<br>
+&emsp;&emsp;console.log(\"Up, up and away!\");<br>
+}"<br><br>
+
+Object.keys() method will return an array of all the keys of any object that<br>
+is provided as an argument.<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+New properties and methods can be added to objects at any time in a program.<br>
+This is done by simply assigning a value to the new property.<br><br>
+
+superman.city = 'Metropolis';<br>
+&lt;&lt;'Metropolis'<br><br><br>
+
+
+You can change the value of an object's properties at any time using assignment.<br>
+For example, we can change the value of the "real name" property like this:<br>
+superman['real name'] = 'Kal-El';
+&lt;&lt;'Kal-El'<br><br>
+
+Any property can be removed from an object using the delete operator<br><br>
+
+object literal can be passed as a parameter to a function<br><br>
+
+function greet({greeting,name,age}) {<br>
+return `${greeting}! My name is ${name} and I am ${age} years old.`;<br>
+}<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Naming collisions occur when the same variable or function name is used for<br>
+different purposes by code sharing the same scope.<br><br>
+
+A solution to this problem is to use the object literal pattern to create a<br>
+namespace for groups of related functions. This is done by creating an object<br>
+literal that serves as the namespace, then adding any values as properties of that<br>
+object, and any functions as methods.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+JSON is a string representation of the object literal notation that we have just<br>
+seen. There are, however, a couple of key differences:<br><br>
+
+1. Property names must be double-quoted<br>
+2. Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects<br>
+3. Functions are not permitted values<br><br>
+
+A JSON string representation the Caped Crusader is shown below:<br><br>
+
+const batman = '{"name": "Batman","real name": "Bruce Wayne","height": 74, "weight": 210, "hero": true, "villain": false, "allies": ["Wonder Girl", "Donna Troy", "Superman"]}' <br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+The Math object is a built-in object that has several properties representing<br>
+mathematical constants, as well as methods that carry out a number of common<br>
+mathematical operations.<br><br>
+
+All the properties and methods of the Math object are immutable and unable to<br>
+be changed.<br><br>
+
+Math.PI // The ratio of the circumference and diameter of a circle<br>
+&lt;&lt; 3.141592653589793<br>
+
+getter methods, which return information about the date object, such as the month and year.<br><br>
+
+Once you've created a date object it will have access to all the getter methods.<br>
+There are two versions of most methods - one that returns the information in<br>
+local time, and the other that uses Coordinated Universal Time (UTC). The<br>
+getTime(), getTimezoneOffset() and getYear() methods don't have UTC<br>
+equivalents.<br><br>
+
+Most of the getter methods covered in the previous section have equivalent<br>
+setter methods. These are methods that can be used to change the value of the<br>
+date held in a Date object.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+There are two ways to create a regular expression. The first, and preferred way,<br>
+is to use the literal notation of writing the regular expression between forward<br>
+slashes that we've already seen:<br><br>
+
+const pattern = /[a-zA-Z]+ing$/;<br><br>
+
+Alternatively, you can create a new instance of the RegExp object using the new<br>
+operator and a constructor function:<br><br>
+
+const pattern = new RegExp('[a-zA-Z]+ing');<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<h3>Chapter 6 Notes-</h3>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+The DOM treats everything on a web page as a node. HTML tags, the text inside<br>
+these tags, even the attributes of a tag are all nodes. The HTML tag is the root<br>
+node, and every other part of the document is a child node of this.<br><br>
+
+DOM also stores any whitespace that is in<br>
+the HTML document as text nodes<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+DOM provides several methods that allow us to access any element on a<br>
+page. These methods will return a node object or a node list, which is an arraylike<br>
+object. These objects can then be assigned to a variable and be inspected or<br>
+modified.<br><br>
+
+we can access the body element of a web page and assign it to the<br>
+variable body by entering the following code into the browser console:<br><br>
+
+const body = document.body;<br><br>
+
+All nodes have a numerical code to signify what type they are. These are<br>
+summmarized in the table below.<br><br>
+
+Code Type<br>
+1 element<br>
+2 attribute<br>
+3 text<br>
+8 comment<br>
+9 body<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Node lists are array-like objects, but they are not arrays. You can access each<br>
+item using index notation. For example, document.images[0] will return the<br>
+first image in the node list of all the images in the document.<br>
+They also have a length property, which can be used to iterate through every<br>
+element using a for loop, like so:<br><br>
+
+for (let i=0 ; i &#60; document.images.length ; i++) {<br>
+// do something with each image using document.images[i]<br>
+}<br><br>
+
+Node lists don't have any other array methods such as slice, splice and join.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+getElementById() method does exactly what it says on the tin. It returns a<br>
+reference to the element with a unique id attribute that is given as an argument.<br>
+If no element exists with the ID provided, null is returned.<br><br>
+
+getElementsByTagName() will return a live node list of all the elements with the<br>
+tag name that is provided as an argument.<br><br>
+
+getElementsByClassName() will return a live node list of all elements that have<br>
+the class name that is supplied as an argument<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+document.querySelector() method allows you to use CSS notation to find<br>
+the first element in the document that matches that matches a CSS selector<br>
+provided as an argument. If no elements match, it will return null.<br>
+The document.querySelectorAll() method also uses CSS notation but returns<br>
+a node list of all the elements in the document that match the CSS query selector.<br>
+If no elements match, it will return an empty node list.<br>
+These are both very powerful methods that can emulate all the methods<br>
+discussed, as well as allowing more fine-grained control over which element<br>
+nodes are returned.<br><br>
+
+document.querySelector('#bats');<br>
+&lt;&lt; &#60;li class="vigilante hero" id="bats">Batman&#60;/li&lt;<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+getAttribute() method returns the value of the attribute provided as an argument<br><br>
+
+setAttribute can change the value of an element's attributes<br><br>
+
+Changing the className property of an element by assignment will overwrite all<br>
+other classes that have already been set on the element.<br>
+This problem can be avoided by using the classList property instead.<br><br>
+
+The toggle method is a particularly useful method that will add a class if an<br>
+element doesn’t have it already, and remove the class if it does have it. It returns<br>
+true if the class was added and false if it was removed. For example:<br><br>
+
+wonderWoman.classList.toggle('hero'); // will remove the 'hero' class<br>
+&lt;&lt; false<br>
+wonderWoman.classList.toggle('sport'); // will add the 'hero' class back<br>
+&lt;&lt; true<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+The innerHTML returns all the child elements of an element as a string of HTML. If an element contains lots of <br>
+other elements, all the raw HTML is returned. In the following example, we can see all the HTML that is<br>
+contained inside the &lt;ul&gt; element with the id of roster:<br><br>
+
+heroes.innerHTML<br>
+&lt;&lt;"<br>
+&lt;li&gt; class=\"hero\">Superman&lt;/li&gt;<br>
+&lt;li&gt; class=\"vigilante hero\" id=\"bats\"&gt;Batman&lt;/li&gt;<br>
+&lt;li&gt; class=\"hero\">Wonder Woman&lt;/li&gt;<br>
+"<br><br>
+
+The innerHTML property is also writable and can be used to place a chunk of<br>
+HTML inside an element. This will replace all of a node's children with the raw<br>
+HTML contained in the string. This saves you having to create a new text node<br>
+as it's done automatically and inserted into the DOM<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Any CSS property names that are separated by dashes must be written in<br>
+camelCase notation<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<h3>Chapter 7 Notes-</h3>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+event listener will let it know when the event happens, and the program can then respond appropriately.<br>
+This allows the program to continue with other tasks while it waits for the event to happen.<br><br>
+
+a non-blocking approach that uses event listeners to listen out for any clicks on the page. Every time<br>
+the page is clicked, a callback function will be called. So the program can continue processing the rest<br>
+of the code while it's waiting for the click event to happen.<br><br>
+
+document.body.addEventListener("click", doSomething);<br><br>
+
+function doSomething(event){<br>
+console.log(event.type);<br>
+}<br><br>
+
+There are several types of events, ranging from when a video has finished playing to when a resource has<br>
+completed downloading. You can see a full list here:<br>
+https://developer.mozilla.org/en-US/docs/Web/Events<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+It's important to support mouse events as well as touch events, so non-touch<br>
+devices are also supported. With so many different devices these days, you can't<br>
+rely on users using just touch or a mouse. In fact, some devices, such as<br>
+touchscreen laptops, support both mouse and touch interactions.<br><br>
+
+The touchend event occurs when a user stops touching the surface:<br><br>
+
+addEventListener('touchend', () => console.log('Touch stopped');<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+There are no 'swipe' events. These need to be created by using a combination of<br>
+touchstart, touchmove, and touchleave events that monitor the distance and<br>
+direction moved from start to finish of a touch event.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
