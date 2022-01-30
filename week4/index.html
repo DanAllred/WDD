@@ -22,9 +22,11 @@
 <h2>Chapter 8 Forums: </h2>
 ---------------------------------------------------------------------------------------------------<br><br>
 
-Forms are made up of a <form> element that contains form controls such as input<br>
-fields, select menus and buttons. These input fields can be populated with<br>
-information that is processed once the form has been submitted.<br><br>
+Forms like cougarboard.com use the &lt;form&gt; element which gives control over the form for things such as fields menus and buttons.<br>
+Once each form field has been populated that info can the be processed.<br>
+
+The below example shows more or less a simple box for searching that would be similar to what google uses. an empty box with a button<br>
+for submitting the request or user could press enter to submit as well<br><br>
 
 &lt;!doctype html><br>
 &lt;html lang='en'><br>
@@ -41,23 +43,19 @@ information that is processed once the form has been submitted.<br><br>
 &lt;/body><br>
 &lt;/html><br><br>
 
-This form has a name attribute ofsearch, and contains two controls: an input<br>
-field where a user can enter a search phrase, and a button to submit the form.<br>
-The form can also be submitted by pressing Enter.<br><br>
-
-document.forms that returns an HTML collection of all the forms in the document<br>
-in the order they appear in the markup. Even though there is only one form in<br>
-our example, a collection will still be returned, so we have to use index<br>
-notation to return the first (and only) form object, like so:<br><br>
+So taking the google example that even though there is only one search field, this is going to return all the HTML forms contained<br>
+therefore when doing something like this you should use indexing, like so:<br><br>
 
 const form = document.forms[0];<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-The form.action property can be used to set the action attribute of a form, so<br>
-it's sent to a different URL to be processed on the server:<br><br>
+form.action property can be used to set the action attribute of a form, so<br>
+it's sent to a different URL to be processed on the server: for example<br><br>
 
-form.action = '/an/other.url'<br><br>
+&lt;form action="https://google.com/search" method="get"><br>
+&lt;input type="hidden" name="sitesearch" value="http://acme.com" /><br>
+&lt;input type="text" name="q" /><br><br>
 
 the submit event, occurring when the form is submitted. Usually this will send<br>
 the content of the form to the server to be processed, but we can use JavaScript <br>
@@ -70,8 +68,8 @@ alert(' Form Submitted');<br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-Text input element objects have a value property that can be used to retrieve the<br>
-text inside the field. We can use this to report back what the user has searched for.<br><br>
+
+you can also use the value property to show the user what was searched for<br><br>
 
 function search(event) {<br>
 alert(`You Searched for: ${input.value}`);<br>
@@ -89,40 +87,20 @@ common types of form control are:<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-Using a for loop to see if each checkbox was checked. Checkbox objects have a checked property<br>
-that tells us if it has been checked or not. It is a boolean property, so can only have the<br>
-values true or false.<br><br>
+use for loops to see if each checkbox was checked. Checkbox objects are boolean so true or false<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
 Hidden fields can be created using input fields with type='hidden'.<br>
-file input field can be created using input fields with type='file'.<br><br>
+file input field can be created using input fields with type='file'. this would allow the user to chose files from there device storage<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-Form validation is the process of checking whether a user has entered the<br>
-information into a form correctly. Examples of the types of validation that occur<br>
-include ensuring that:<br><br>
+use form validating to check that info is entered correctly. Like emails having an @ and a .com, or password having <br>
+the correct length or special characteristics.<br><br>
 
-A required field is completed<br>
-An email address is valid<br>
-A number is entered when numerical data is required<br>
-A password is at least a minimum number of characters<br><br>
-
-Validation can occur on the client side using JavaScript, and on the server side.<br>
-It is advisable to use both client-side and server-side validation. JavaScript <br>
-should not be relied upon to validate any data before it's saved to a database. <br>
-This is because it's possible for a user to modify the JavaScript code and bypass<br>
-the validation rules. It's also very easy to bypass the front-end completely and<br>
-send arbitrary data to the application's backend. For these reasons, JavaScript<br>
-validation should be used to enhance the user experience when filling in a <br>
-form by giving feedback about any errors before it's submitted. This should<br>
-then be backed up with more validation performed on the server before the <br>
-data is eventually saved to a database. Having said that, it's still useful <br>
-to validate on the client side even if the data will be validated again on <br>
-the server side. This is because it will ensure that more valid data is sent <br>
-to the server, which helps to cut down the number of HTTP requests required <br>
-to send the form back and forward from the server to be corrected.<br><br>
+You should validate on the client side and server side. Javascript code is easily bypassed but this does not mean that<br>
+you shouldnt validate anyways as this can reduce HTTP requests required.<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
@@ -133,20 +111,17 @@ to send the form back and forward from the server to be corrected.<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-encapsulation: the inner workings are kept hidden inside the object and only<br>
-the essential functionalities are exposed to the end user, such as the 'on'<br>
-button. In OOP, this involves keeping all the programming logic inside an <br>
-object and making methods available to implement the functionality, without <br>
-the outside world needing to know how it's done.<br><br>
+encapsulation: is essentially taking everything and wrapping it up. much like medicine which has been encapsulated or put<br>
+into a capsul form. In OOP we make all the logic behind a code inside objects and use methods to implement the code. The world<br>
+does not need to see the sausage being made.<br><br>
 
 polymorphism: the same process can be used for different objects<br>
 In OOP, this means various objects can share the same method, but also have the<br>
-ability to override shared methods with a more specific implementation.<br><br>
+ability to override shared methods with a more specific implementation.<br>
+A real-life example of polymorphism, a person at the same time can have different characteristics. Like a man at the same time is a<br>
+father, a husband, an employee. So the same person posses different behavior in different situations.<br>
 
-inheritance: taking the features of one object then adding some new<br>
-features. In OOP, this means we can take an object that already exists and inherit<br>
-all its properties and methods. We can then improve on its functionality by<br>
-adding new properties and methods.<br><br>
+inheritance: like father like son. basically an object can inherit all the properties of a parent object<br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
@@ -160,13 +135,13 @@ that created it:<br><br>
 blueDice.constructor<br>
 &lt;&lt;[Function: Dice]<br><br>
 
+This faciliates creating new objects. The constructor can be used to instantiate a copy of an object<br>
+and you don't have to reference the function or class declaration directly.<br><br>
+
 ---------------------------------------------------------------------------------------------------<br><br>
 
-Static methods are not available to instances of the class. So, in our example, the<br>
-instances of Dice such as redDice and blueDice cannot call the static description() method:<br><br>
-
-redDice.description<br>
-&lt;&lt; TypeError: red.description is not a function<br>
+Static method is a method defined as a member of an object but is accessible directly from an API object's <br>
+constructor, rather than from an object instance created via the constructor.<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
@@ -176,32 +151,31 @@ if class declarations are used:<br><br>
 Turtle.prototype = {}<br>
 &lt;&lt; {}<br><br>
 
-Even though it looks like the prototype has been reassigned to an empty object<br>
-literal, we can see see it hasn't actually changed:<br><br>
+it looks like the prototype has been reassigned to an empty object literal, but it hasnt...:<br><br>
 
 Turtle.prototype<br>
 &lt;&lt; Turtle { attack: [Function], weapon: 'Feet' }<br><br>
 
-It is possible to do this if constructor functions are used, and it can cause a lot of<br>
-headaches if you accidentally redefine the prototype. This is because any<br>
-instances that have already been created will retain the properties and methods of<br>
-the old prototype, but will not receive any of the new properties and methods<br>
-that are subsequently added to the redefined prototype.<br>
+you can do this ONLY if the constructor was used, but you have to be careful not to redefine the prototype.<br>
 
-This is another reason why it's recommended to use class declarations instead of<br>
-constructor functions.<br><br>
+"This is because any instances that have already been created will retain the properties and methods of<br>
+the old prototype, but will not receive any of the new properties and methods<br>
+that are subsequently added to the redefined prototype."<br>
+
+better to simply use class declarations.<br><br>
 
 prototype can be used to add any new properties and methods after the class<br>
-has been declared. It should be used to define any properties that will remain the<br>
-same for every instance of the class.<br><br>
+has been declared. this should be used for properties that will be the same for all instances.<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-Never use arrays or objects as a default value in prototype.<br><br>
+Never use arrays or objects as a default value in prototype. We should always use the [] constructor to avoid this kind of things.<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-Create a class declaration that deals with any initialization, shared properties and methods.<br><br>
+Take note here.... this is important!
+
+"Create a class declaration that deals with any initialization, shared properties and methods.<br><br>
 
 Any extra methods and properties that need to be augmented to the class declaration <br>
 after it's been defined can be added to the prototype. These will be added to all <br>
@@ -212,52 +186,27 @@ can be augmented using assignment to that object (a mixin could be used to<br>
 add multiple properties at once, as we'll see later).<br><br>
 
 Be careful when overwriting the prototype completely ― the constructor<br>
-class needs to be reset.<br><br>
+class needs to be reset."<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-By default, an object's methods are public in JavaScript. Methods and properties<br>
-are said to be public because they can be queried directly and changed by<br>
-assignment.<br><br>
+By default, an object's methods are public in JavaScript. or in other words, the are accessible to everyone that<br>
+can acces that class instance. This harkens back to scope.<br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-It is possible to add more methods to the prototype of JavaScript's built-in<br>
-objects — such as Number, String, and Array — to add more functionality. This<br>
-practice is known as monkey-patching, but it's mostly frowned upon in the<br>
-JavaScript community, despite it being an incredibly powerful technique<br><br>
+Monkey see monkey do :)<br>
 
-we can add isOdd() and isEven() methods to the Number wrapper object's prototype. <br>
-These methods will then be available to number primitives:<br><br>
+Monkey-patching is basically a technique to add or change or even suppress a default behavior without changing the source.<br>
+apparently frowned upon in the javascript community, but a great technique none the less.<br>
 
-Number.prototype.isEven = function() {<br>
-return this%2 === 0;<br>
-}<br><br>
-
-Number.prototype.isOdd = function() {<br>
-return this%2 === 1;<br>
-}<br><br>
-
-We can try a few more examples to check that these work:<br><br>
-
-42.isEven();<br>
-&lt;&lt;true<br><br>
-
-765234.isOdd();<br>
-&lt;&lt;false<br><br>
+basically we can reference a function and "hack the function" by changing or modifing the behavior
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-When objects are copied by assignment, they are only copied by reference. This<br>
-means that another object is not actually created in memory; the new reference<br>
-will just point to the old object. Any changes that are made to either objects will<br>
-affect both of them. Arrays and functions are objects, so whenever they’re<br>
-copied by assignment they will just point to the same object. And when one<br>
-changes, they all change. This is known as making a shallow copy of an object.<br>
-A deep or hard copy will create a completely new object that has all the same<br>
-properties as the old object. The difference is that when a hard copy is changed,<br>
-the original remains the same. But when a shallow copy is changed, the original<br>
-changes too.<br><br>
+When objects are copied by assignment, they are only copied by reference. Basically the same as your <br>
+process tempaltes. When you need to make a change the change will be reflected on all objects(functions and methods)<br>
+This change can occur in either the original or the copy. yet all will be affected. so make sure that they are related for sure.<br><br>
 
 This affects our mixin function when we try to copy a property that is an array or<br>
 object<br><br>
@@ -268,26 +217,20 @@ object<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-A module is a self-contained piece of code that provides functions and methods<br>
-that can then be used in other files and by other modules. This helps to keep<br>
-code organized in separate, reusable files, which improves code maintainability.<br>
-The code in a module should have a single purpose, and group together functions<br>
-with distinct functionality. For example, you might keep any functions used for<br>
-Ajax in their own module. This could then be used in any projects where Ajax<br>
-was required. Keeping code modular helps to make it more loosely coupled and<br>
-interchangeable, meaning you can easily swap one module for another without<br>
-affecting other parts of a project. Indeed, small single-purpose modules are the<br>
-exact opposite of large monolithic libraries as they enable developers to use only<br>
-the modules that are needed, avoiding any wasted code. Modules also allow a<br>
-public API to be exposed, while keeping the implementation hidden away inside<br>
-the module.<br><br>
+Modular javascript is essentially a way to break apart code into self contained importable mods. Code is then<br>
+stored in separate files that can be reused. You can build libraries of useful functions. I see this daily<br>
+with SPC where complex formulas are used for things like CPk and PPk. by building this library you can then <br>
+import the function needed on demand. Makes your code easier to mainain. The idea is also to keep it as "loosely coupled"<br>
+(think train coupling) by keeping it this way you can change out the cars on the train easily without affecting the other cars.<br><br>
 
 It is considered good design to keep code as loosely coupled as possible<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
+Take note here. this is important!<br><br>
 
 All code in modules is always in strict mode without the need for 'use strict'<br>
-and there is no way to opt out of this.<br><br>
+and there is no way to opt out of this.  Strict mode makes several changes to normal<br> 
+JavaScript semantics: Eliminates some JavaScript silent errors by changing them to throw errors.<br><br>
 
 A module has its own global scope, so any variables created in the top-level<br>
 of a module can only be accessed within that module.<br><br>
@@ -295,54 +238,22 @@ of a module can only be accessed within that module.<br><br>
 The value of this in the top level of a module is undefined, rather than the<br>
 global object.<br><br>
 
-You can't use HTML-style comments in modules (although this isn't very<br>
-common in any JavaScript program these days).<br><br>
+You can't use HTML-style comments in modules<br><br>
 
 ---------------------------------------------------------------------------------------------------<br><br>
 
-export const PI = 3.1415926; in one file<br><br>
+example here of how to import modules is not really complicated. Same as you do in python really:<br><br>
 
-import { PI } from './pi.js'; in other files<br><br>
+first function is created in a file<br>
+export const PI = 3.1415926;<br><br>
+
+then in the file you want to use the above mod. you do this:<br>
+import { PI } from './pi.js';<br><br>
 
 idea is you could create a library of functions to import into another code<br><br>
 
-Having more than one default export will result in a syntax error.<br><br>
+Having more than one default export will result in a syntax error. so as an alternative we should use named exports.<br><br>
 
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
----------------------------------------------------------------------------------------------------<br><br>
 ---------------------------------------------------------------------------------------------------<br><br>
 ---------------------------------------------------------------------------------------------------<br><br>
 ---------------------------------------------------------------------------------------------------<br><br>
