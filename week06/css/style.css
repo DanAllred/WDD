@@ -1,0 +1,71 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+   
+}
+ 
+ul{ 
+  list-style-type: none;  
+}
+
+.checked { 
+    text-decoration: line-through;
+  }
+
+  
+.todoItems {
+  max-width: 400px;
+  margin:0 auto;
+  text-align: left;
+}
+
+  
+.todoForm {
+  margin: 40px 0px;
+}
+
+
+.item {
+  background-color: #CFDBD5;
+  padding: 10px;
+  font-size: 1.1rem;
+  max-width: 350px;
+}
+ 
+
+.todoInput { 
+  width: 250px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.add-button {
+  background-color: #2081C3;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.3rem;
+}
+
+.delete-button {
+  float: right;
+  background-color: #DD403A;
+  outline: none;
+  border-radius: 6px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-weight:600;
+}
+
+button:hover{
+  cursor:pointer;
+}
+
+footer{
+  max-width: 350px;
+  margin:0 auto;
+  padding:1em;
+}
