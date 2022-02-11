@@ -104,40 +104,40 @@ function updateCount(todos){
       taskCounter.innerHTML = `${todos.length} task(s) found`;
 
   } else {
-      taskCounter.innerHTML = `0 tasks found`;
+      taskCounter.innerHTML = `No tasks found`;
   }
   
 }
 
 function active(todos){
   const taskCounter = document.getElementById('counter');
-  ctr=0; 
+  counter=0; 
    
     todos.forEach(function(item) {
        if (item.completed != true){
-        ctr++;
-        taskCounter.innerHTML = `${ctr} task(s) active`;
+        counter++;
+        taskCounter.innerHTML = `${counter} task(s) active`;
     } 
    
-      if (ctr == 0){
-        taskCounter.innerHTML =  `0 tasks active`;
+      if (counter == 0){
+        taskCounter.innerHTML =  `No tasks active`;
           }
      });
  }
 
 function completed(todos){
   const taskCounter = document.getElementById('counter');
-  ctr1=0;
+  counter1=0;
  
   todos.forEach(function(item) {
   
     if (item.completed == true){
-      ctr1++;
-      taskCounter.innerHTML = `${ctr1} task(s) completed`;
+      counter1++;
+      taskCounter.innerHTML = `${counter1} task(s) completed`;
     }  
 
-    if (ctr1 == 0){
-      taskCounter.innerHTML =  `0 tasks completed`;
+    if (counter1 == 0){
+      taskCounter.innerHTML =  `No tasks completed`;
         }
    });
 
