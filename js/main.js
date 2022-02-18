@@ -22,7 +22,11 @@ const links = [
   {
     label: "Week 6 To Do",
     url: "week06/todo.html"
-  }            
+  },
+  {
+    label: "Week 7 notes",
+    url: "week7/index.html"
+  }               
 ]
 
 var olist = document.getElementById("list");

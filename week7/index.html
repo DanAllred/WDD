@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week05 Notes</title>
+    <meta name="description" content="Week07 Reading notes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- &lt; < -->
+<!-- &gt; > -->
+<!-- &emsp; four space tab -->
+
+<h1>Week07 notes:</h1>
+
+<h2>Chapter 11: </h2>
+---------------------------------------------------------------------------------------------------<br><br>
+
+Function are first-class objects so they have properties and methods. you can use the lenth property (all functions have)<br>
+to return the amount of parameters accepted by the function. You could also use the call method to to provide the object as<br>
+and argument. If a function requires any parameters then these need to be provided inside the ().<br><br>
+
+You can also use parameters to allow for memoization (cache[]) This essentially stores the results and allows for you to call<br>
+it again without having to do all the computations again. Think about work and how running the report for a year takes forever<br>
+to calculate the cpk and other statistics.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+IIFE pronounced 'iffy' are anonymous functions that are invoked immediately invoked as soon as it is defined. Think wrapper.<br>
+Note that in es6 if you are using modules IIFE is less useful(not worthless) because the scope is already limited to the module.<br>
+This does not mean that you may not ever need to sepearte some code from the rest. Another useful feature of the IIFE is putting<br>
+temporary variables in the wrapper using a variable called temp so that it only exists while the IFFE is being invoked<br><br>
+
+Another great use of IIFE is to front load something like initialization. Like a welcome message that isn't needed later.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Recursive functions invoke themselves until a condition has been met like if n==1 do something else keep going until n==1<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+use callbacks to ensure that when waiting or listening for something to finish or happen doesn't keep other code from running.<br><br>
+
+promises can be used to simplfy callback hell (convulted coding from too many callbacks). Promises can either be resolved or rejected<br>
+once the promise has been resolved or settled we can use the then() method to proceed. You could also use the .catch() method<br>
+You can chain .then and .catch methods together<br><br>
+
+promise.then('')<br>
+&emsp;.catch('')<br><br>
+
+You can also chain promises where only one promise will begin when the previous has been settled.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+functions can accept other functions as arguments, they can also return a function.<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Closure is where an 'inner' function is returned by the 'outer' function giving it access to any variables regardless of scope of the functions<br><br>
+
+
+using closures allows access to variables but also allows changing variables.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+generators can be used to define functions... * is placed after the function declaration. function* name(). generators are used to maintain the <br>
+state of a value. you would then use a next method to return a value everytime it gets called<br><br>
+
+yield keyword is different than return because the state of the value returned is remembered the next time yield is called. Loops are paused after<br>
+every yield statement, until the next method is called again<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+A key aspect of functional programming is its use of pure functions. A pure<br>
+function is a function that adheres to the following rules:<br><br>
+
+1) The return value of a pure function should only depend on the values provided<br>
+as arguments. It doesn't rely on values from somewhere else in the program.<br><br>
+
+2) There are no side-effects. A pure function doesn't change any values or data<br>
+elsewhere in the program. It only makes non-destructive data transformations<br>
+and returns new values, rather than altering any of the underlying data.<br><br>
+
+3) Referential transparency. Given the same arguments, a pure function will<br>
+always return the same result.<br><br>
+
+In essence, functional programming or pure functions is to the point and predictable, easier to test, reduction in bugs. But it is rigid and easy to<br>
+break the rules. However, you can use pure functions mixed with other paradigms. This allows you to perform operations without changing the state of any<br>
+data
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Currying is when not all arguments are given to the function so it returns another function that has the arguments...<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Functional programming can really raise your standard of programming. It is important to try and keep your functions as pure as possible.<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Chapter 13:<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Ajax allows web pages to update with reloading. Clients request something from a server, which process the request and sends a response back.<br>
+think about your PLC servers and QDA. QDA(client) requests data stored on PLC, PLC sends data, QDA accepts data and sends request for next sample<br>
+JSON is now the most common AJAX, think about how ERP systems communicate with data collection software via JSON to update serial numbers or part<br>
+numbers dynamically without having to go back and reload the software...communication goes bothways via the JSON messages<br>
+APIs are being used more and more. Fetch API is the standard now and uses promises to avoid callback hell.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
