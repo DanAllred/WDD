@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week08 Notes</title>
+    <meta name="description" content="Week08 Reading notes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- &lt; < -->
+<!-- &gt; > -->
+<!-- &emsp; four space tab -->
+
+<h1>Week08 notes:</h1>
+
+<h2>Chapter 8: </h2>
+---------------------------------------------------------------------------------------------------<br><br>
+
+With the transform property you can translate, rotate, scale and/or skey any element<br>
+with all the above mentioned functions, note you need transform: functionname() for it to work<br>
+
+The translation function lets you move elements similar to the function position: relative<br>
+Note that the translated element can only be moved relative to its current position<br><br>
+
+translate(x,y) moves the function along the x and y coords. example is transform: translate(45px, -45px)<br>
+to move in one direction only use transform: translatex() or translatey()<br>
+
+Also note Transforms require vendor prefixing for IE9, Android up to 4.4.3, iOS8, and<br>
+Blackberry 10. To make the aforementioned code work in IE9 and older mobile<br>
+WebKit browsers, you would include the following:<br><br>
+
+-webkit-transform: translate(45px,-45px); /* iOS8, Android<br>
+➥4.4.3, BB10 */<br>
+-ms-transform: translate(45px,-45px); /* IE9 only */<br>
+transform: translate(45px,-45px);<br><br>
+
+final note on translate is that they don't work on inline elements so don't forget display: inline-block<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+the scale() function works with the same x and y axis but to scale an element. in otherwords<br>
+make it bigger or smaller. scale(2) would double, scale(.5) would halve it, where scale(1) would maintain.<br>
+note that scaled elementes shrink or grow towards or from the center.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+rotate() spins an element around the center by degree. positive degrees rotate clockwise, negative, counterclockwise<br>
+example: transform: rotate(10deg)<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+skew() can skew an element along x and y axis by degrees. if only one paramter is used then only x axis will be effected.<br>
+skew(15deg, 4deg)<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+using transform-origin: allows you to change the point of origin of an element by percentage<br>
+transform-origin: 10% 10%<br><br>
+
+The order of transform functions does matter: if you rotate before translating,<br>
+your translate direction will be on the rotated axis. The rightmost square in Figure<br>
+8.8 was translated then rotated with transform: translateX(200px)<br>
+rotate(135deg);. The leftmost square was rotated first then translated along<br>
+the newly rotated axis: transform: rotate(135deg) translateX(200px);.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+You can use transitions which allow values of CSS properties to change over time creating animations.<br><br>
+
+1. Declare the original state of the element in the default style declaration.<br>
+2. Declare the final state of your transitioned element; for example, a :hover state.<br>
+3. Include the transition functions in your default style declaration using the<br>
+transition properties, including: transition-property, transition-duration,<br>
+transition-timing-function, and transition-delay.<br><br>
+
+CSS example<br><br>
+
+.li {<br>
+&emsp;transition-property: transform;<br>
+&emsp;transition-duration: 0.1s; #duration is in seconds<br>
+&emsp;transition-timing-function: ease-out; #https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function<br>
+&emsp;trnasition-delay: 50ms; #ms = milliseconds<br>
+}<br><br>
+
+you can have multiple transitions seperated by a , and a space. order is important as each transition corresponds to it's position<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+CSS animations control the steps of an animation via keyframes<br>
+Keyframes use from and to defined with a percentage which determines<br>
+how far long the animation each keyframe is located. This means that the order they apear<br>
+does not matter, it is all about the percentage<br><br>
+
+@keyframes moveRight {<br>
+&emsp;from {<br>
+&emsp;&emsp;transform: translateX(-50%);<br>
+&emsp;}<br>
+&emsp;to {<br>
+&emsp;&emsp;transform: translateX(50%);<br>
+&emsp;}<br>
+}<br>
+@keyframes appearDisappear {<br>
+&emsp;0%, 100% {<br>
+&emsp;&emsp;opacity: 0;<br>
+&emsp;}<br>
+&emsp;20%, 80% {<br>
+&emsp;&emsp;opacity: 1;<br>
+&emsp;}<br>
+}<br>
+@keyframes bgMove {<br>
+&emsp;100% {<br>
+&emsp;&emsp;background-position: 120% 0;<br>
+&emsp;}<br>
+}<br><br>
+
+The above example will cause the element to start invisible, fade into visible at 20%<br>
+duration, then at 80% fade out again.<br><br>
+
+steps( n, jumpterm) Displays the transition along n stops along the transition, displaying each stop for equal lengths of time. <br>
+For example, if n is 5, there are 5 steps. Whether the transition holds temporarily at 0%, 20%, 40%, 60% and 80%, on the <br>
+20%, 40%, 60%, 80% and 100%, or makes 5 stops between the 0% and 100% along the transition, or makes 5 stops including the 0% <br>
+and 100% marks (on the 0%, 25%, 50%, 75%, and 100%) depends on which jump term is used<br>
+
+for jumpterms https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+animations and transitions are great because they provide a lighter animation than cpu hogger JavaScript<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+https://www.w3schools.com/cssref/css3_pr_animation.asp for more animation properties<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+"just because you can animate does not mean you should..."<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<h2>Chapter 12 notes:</h2>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+The Canvas API provides a means for drawing graphics via JavaScript and the HTML &lt;canvas> element. <br>
+Among other things, it can be used for animation, game graphics, data visualization, photo manipulation, <br>
+and real-time video processing. example:<br><br>
+
+this goes in html: <br>
+&lt;canvas id="canvas">&lt;/canvas><br><br>
+
+in javascript:<br>
+const canvas = document.getElementById('canvas');<br>
+const ctx = canvas.getContext('2d');<br><br>
+
+ctx.fillStyle = 'green';<br>
+ctx.fillRect(10, 10, 150, 100);<br><br>
+
+Result would be a green rectangle. Note that height and width of the canvas is declared directly in the html element<br>
+To make a gradient that starts as blue and begins to blend into white halfway down the gradient, we can specify a blue<br>
+color stop with an offset of 0 and a purple color stop with an offset of 1:<br><br>
+
+gradient.addColorStop(0, "blue");<br>
+gradient.addColorStop(1, "white");<br>
+
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API for further explanations on the canvas api for drawing and images<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Canvas API can also be used for altering videos. Things like green screens and visual effects added to videos.<br>
+it is important to note that a new event listener should be added to react to the play event firing on the video<br>
+element. Another note is that anonymous functions are required to pass the paramters to the draw function.<br><br>
+
+Once the draw function has been written for a frame we can then call that same function for each frame we want to manipulate.<br><br>
+
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas<br><br>
+
+canvas.width = canvas.width; will clear the canvas. useful to add text if an error happens to let user know<br><br>
+
+Canvas lacks accessibility. Doesn't create a dom node and is not a textbased format. So it is possible that it could change soon...<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+SVG stands for Scalable Vector Graphics which uses XML. Vector images maintain quality as you blow them up or make them smaller<br>
+Many of the same things done in canvas can be done in SVG. Lots of open source ools can be used as well. Also more accessible than canvas.<br><br>
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><br>
+&emsp;&lt;circle cx="50" cy="50" r="25" fill="red"/><br>
+&lt;/svg><br><br>
+
+viewBox attribute defines the starting location, width, and height. Circle element defines the a circle, cx, cy, X and Y coords of the<br>
+center of the circle. r=radius and fill is fill style.<br><br>
+
+or you can use http://inkscape.org/ to help create SVG images.<br><br>
+
+Raphaël (http://raphaeljs.com/is) an open-source JavaScript library that makes drawing and animating with SVG much easier.<br><br>
+
+create a container by using the raphael method, then passing the html element name, width and height.<br>
+Now add image variable by calling on the conatiner. give the parameters of the path, starting coords(where the image goes), width and height of the image.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Drag and Drop API- think about how you add files to dropbox by dragging and dropping.<br><br>
+
+There are several steps to adding drag and drop to your page:<br>
+1. Set the draggable attribute on any HTML elements you’d like to be draggable. (draggable="true"<br>
+2. Add an event listener for the dragstart event on any draggable HTML elements.<br>
+3. Add an event listener for the dragover and drop events on any elements that you want to have accept dropped items.<br><br>
+
+DataTransfer lets us define two pieces of information:<br>
+■ the type of data we’re saving of the draggable element<br>
+■ the value of the data itself<br><br>
+
+dragover and drop events are monitored to do precisly what they say. JavaScript’s preventDefault method allows us to ensure that the default behavior<br>
+for an element does not happen. in the case of drag and drop we want to be able to drag something over another thing and drop it on it.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+To learn more about the Drag and Drop API, here are a couple of good resources<br>
+■ https://developer.mozilla.org/En/DragDrop/Drag_and_Drop Drag and Drop documentation18<br>
+■ http://dev.w3.org/html5/spec/dnd.html Drag and Drop specification<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
