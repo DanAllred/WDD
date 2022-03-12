@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week10 Notes</title>
+    <meta name="description" content="Week10 Reading notes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- &lt; < -->
+<!-- &gt; > -->
+<!-- &emsp; four space tab -->
+
+
+
+<h1>Week10 notes:</h1>
+
+<h2>Client-side form validation</h2>
+---------------------------------------------------------------------------------------------------<br><br>
+
+Client-side form validation is where you ensure all form controls are filled out properly before submitting<br>
+the data to the server. This helps to reduce delays by letting the user fix any issues before the server<br>
+finds it and sends it back to be fixed by the user.<br><br>
+
+Client-side form validation should not be the only form of validation and security. You should always do server<br>
+side validation as well because client side validation is easy to bypass.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Form Validation happens in ways like making a field required or making it numerical only and accepting 10 values<br>
+for things like phone numbers. You can also require specific formats for things like email among others. If the<br>
+forms are filled out correctly then it allows the application to submit the data to the server.<br><br>
+
+Built in form validation uses HTML5, performs better and requires less work but is not very customizable.<br>
+Things like required, min, max are built in form validation. It is a good idea to style validation errors<br>
+so that they are visible to the user so they can fix them. Example:<br><br>
+
+&lt;label for="choose">Would you prefer a banana or cherry? (required)</label><br>
+&emsp;&lt;input id="choose" name="i_like" required><br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+JavaScript is more customizable but you have to create it all.<br><br>
+
+Constraint validation API which most browsers support uses methods and properties from the form element DOM interfaces<br>
+HTMLButtonElement, inputElement and selectelement are just a few.<br>
+the validationMessage will return a message telling you that something isn't correct. so you would correlate the correct<br>
+validitystate with your element. toolong, maxlength, tooshort etc...<br><br>
+
+The nice thing about constraint validation api is it allows for more customization or flexibility. You can stylize the auto<br>
+generated error messages using the api where normally they are not customizable.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+At the end of the day there is no true answer for which is the best kind of validation. It is up to you, what you prefer<br>
+and what best fits your situation.<br><br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+<h2>Using the Fetch API</h2>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Fetch API gives JavaSCript a handle to grab on to to be able to manipulate HTTP like requests and responses.<br>
+This uses the fetch() method fetch() won't send cross-origin cookies unless you set the credentials init option.<br>
+Since April 2018. The spec changed the default credentials policy to "same-origin"<br>
+fetch('some url example')<br>
+.then()<br>
+.then()<br><br>
+
+Fetch can accespt an init object as a second paramter like grab a specific header, bod, mode or credentials. You could<br>
+even exclude something using omit.<br><br>
+
+https://developer.mozilla.org/en-US/docs/Web/API/fetch<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+You should check for that the fetch was successful. You can do this with an if statement to see if the response<br>
+is not ok, then show a message that response was not ok.<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+Headers can be guarded. basically means you cant change them inside your fetch request<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+
+also fetch basically works on just about all browsers except for... drum roll... Internet Explorer. who would have guessed it?<br>
+
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
+---------------------------------------------------------------------------------------------------<br><br>
