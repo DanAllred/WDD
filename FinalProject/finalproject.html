@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision-Weather.com</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+            <img class="images" src="images/weatherlogo.png" alt="weather logo" /></a>
+            <h1 class="title">Precision-Weather.com</h1>
+    </header>
+    <div class="container">
+        <h2 id="dateTime"></h2>
+        <div id="loadInfo">
+            <div id="icon"><img src='' alt="image of weather" id="tempIcon"></div>
+            <br>
+            <div id="zipCheck">Zip Code Required</div><br>
+            <input type="text" id="zipCode" placeholder="93536" maxlength="5" required>
+            <br><br>
+            <div id='output'></div>
+            <div id='forecastOutput'></div>
+            <div id="buttons">
+                <button class="button" id="weather">Weather</button>
+                <button class="button" id="tdforecast">24 Hour Forecast</button>
+                <button class="button" id="forecast">5 Day Forecast</button>
+            </div>
+        </div>
+    </div> 
+    </div>
+    <footer>
+        &copy; <span id="copyrightyear"></span> | Daniel Allred | Detroit | <a class="byuilink"
+            href="https://www.byui.edu/online">BYUI Online Learning</a>
+    </footer>
+    <script src="main.js" type="module"></script>
+
+</body>
+
+</html>

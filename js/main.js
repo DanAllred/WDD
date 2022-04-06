@@ -38,7 +38,12 @@ const links = [
   {
     label: "Week 10 notes",
     url: "week10/index.html"
+  },
+  {
+    label: "Final Project",
+    url: "FinalProject/finalproject.html"
   }
+  
 ]
 
 var olist = document.getElementById("list");
